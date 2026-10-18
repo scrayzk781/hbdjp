@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For My Sweet Boy ♡</title>
+<style>
+  :root {
+    --pink: #f6dce3;
+    --pink2: #fbeef1;
+    --rose: #bd657c;
+    --deep: #783c50;
+    --cream: #fffaf7;
+    --ink: #624751;
+    --muted: #9c7883;
+    --line: #eed2da;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--ink);
+    background: radial-gradient(circle at top, #fffafd 0, var(--pink2) 52%, #f4dce4 100%);
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  button, input { font: inherit; }
+  button { cursor: pointer; }
+  .screen { display: none; min-height: 100vh; padding: 28px 18px 48px; }
+  .screen.active { display: flex; align-items: center; justify-content: center; }
+  .wrap { width: min(760px, 100%); margin: auto; text-align: center; }
+  .eyebrow { color: var(--rose); text-transform: uppercase; letter-spacing: .18em; font: 11px Arial, sans-serif; }
+  h1 { font-size: clamp(32px, 7vw, 55px); line-height: 1.08; font-weight: normal; margin: 12px 0; }
+  h2 { font-size: clamp(27px, 5vw, 39px); font-weight: normal; margin: 10px 0 14px; }
+  p { line-height: 1.75; }
+  .sub { color: var(--muted); max-width: 490px; margin: 12px auto 24px; }
+  .card {
+    background: rgba(255,250,247,.86); border: 1px solid var(--line);
+    border-radius: 24px; padding: clamp(22px, 5vw, 42px);
+    box-shadow: 0 16px 45px rgba(151, 87, 108, .09);
+  }
+  .heart { color: var(--rose); font-size: 24px; }
+  .btn {
+    border: 1px solid #d8a2b1; color: white; background: var(--rose);
+    border-radius: 999px; padding: 12px 22px; margin: 6px;
+    transition: transform .15s, background .15s;
+  }
+  .btn:hover { transform: translateY(-2px); background: var(--deep); }
+  .btn.secondary { color: var(--deep); background: #fff7f8; }
+  .keypad { display: grid; grid-template-columns: repeat(3, minmax(58px, 76px)); gap: 9px; justify-content: center; margin: 20px auto 12px; }
+  .key {
+    border: 1px solid var(--line); background: white; color: var(--deep);
+    border-radius: 16px; height: 57px; font-size: 20px;
+  }
+  .key:hover { background: var(--pink2); }
+  .code-display { letter-spacing: .4em; font: 22px Arial, sans-serif; min-height: 32px; color: var(--rose); }
+  .error { color: #a03d56; min-height: 22px; font: 13px Arial, sans-serif; }
+  .gifts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+  .gift {
+    background: #fff9fa; border: 1px solid var(--line); border-radius: 20px;
+    padding: 20px 10px; color: var(--deep); min-height: 165px;
+    box-shadow: 0 8px 24px rgba(151, 87, 108, .06);
+  }
+  .gift:hover { transform: translateY(-4px); }
+  .gift-art { font-size: 46px; display: block; margin-bottom: 10px; }
+  .gift strong { display: block; font-size: 17px; font-weight: normal; }
+  .gift small { display: block; font: 11px Arial, sans-serif; color: var(--muted); margin-top: 7px; }
+  .flower-art { width: min(300px, 80%); margin: 4px auto 18px; display: block; }
+  .notes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; text-align: left; }
+  .note { padding: 16px; border-radius: 16px; background: #fff2f5; border: 1px solid #f1d8df; line-height: 1.55; }
+  .note b { color: var(--rose); font-weight: normal; display: block; margin-bottom: 5px; }
+  .story-box { max-width: 520px; margin: 22px auto; padding: 26px; background: #fff4f6; border: 1px solid var(--line); border-radius: 20px; min-height: 145px; display:flex; align-items:center; justify-content:center; }
+  .story-box p { font-size: 19px; }
+  .letter { text-align: left; max-width: 580px; margin: 20px auto 0; line-height: 1.9; white-space: pre-line; }
+  .signature { color: var(--rose); font-style: italic; font-size: 20px; }
+  .tiny { font: 11px Arial, sans-serif; color: var(--muted); margin-top: 24px; }
+  .top-heart { margin-bottom: 12px; color: var(--rose); letter-spacing: .3em; }
+  @media (max-width: 540px) {
+    .gifts { grid-template-columns: 1fr; max-width: 300px; margin-left: auto; margin-right: auto; }
+    .gift { min-height: 115px; display: flex; align-items: center; text-align: left; gap: 14px; padding: 15px 20px; }
+    .gift-art { font-size: 39px; margin: 0; }
+    .notes { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<section id="lock" class="screen active">
+  <div class="wrap">
+    <div class="card">
+      <div class="top-heart">♡ ✧ ♡</div>
+      <div class="eyebrow">A tiny surprise, just for you</div>
+      <h1>For my sweet boy</h1>
+      <p class="sub">Before you come in, enter the little date that started our story.</p>
+      <div id="code" class="code-display" aria-live="polite">○ ○ ○ ○</div>
+      <div class="keypad" aria-label="Secret code keypad">
+        <button class="key" onclick="press('1')">1</button><button class="key" onclick="press('2')">2</button><button class="key" onclick="press('3')">3</button>
+        <button class="key" onclick="press('4')">4</button><button class="key" onclick="press('5')">5</button><button class="key" onclick="press('6')">6</button>
+        <button class="key" onclick="press('7')">7</button><button class="key" onclick="press('8')">8</button><button class="key" onclick="press('9')">9</button>
+        <button class="key" onclick="clearCode()">⌫</button><button class="key" onclick="press('0')">0</button><button class="key" onclick="checkCode()">♡</button>
+      </div>
+      <div id="error" class="error"></div>
+      <p class="tiny">A little world made with love, for you and only you ♡</p>
+    </div>
+  </div>
+</section>
+
+<section id="home" class="screen">
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">Happy birthday, baby</div>
+      <h1>Three little gifts<br>for my favourite person</h1>
+      <p class="sub">Pick whichever one your heart wants first. There is a little piece of my heart in every box.</p>
+      <div class="gifts">
+        <button class="gift" onclick="show('flower')"><span class="gift-art">🌺</span><span><strong>A flower for you</strong><small>Something that reminds me of you</small></span></button>
+        <button class="gift" onclick="show('story')"><span class="gift-art">🎮</span><span><strong>Our little beginning</strong><small>How you caught my voice</small></span></button>
+        <button class="gift" onclick="show('letter')"><span class="gift-art">💌</span><span><strong>Open when...</strong><small>A letter from your bunny</small></span></button>
+      </div>
+      <p class="tiny">Take your time, my love. You can open them all ♡</p>
+    </div>
+  </div>
+</section>
+
+<section id="flower" class="screen">
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">Gift one · A flower for you</div>
+      <h2>For my favourite boy</h2>
+      <svg class="flower-art" viewBox="0 0 300 300" role="img" aria-label="A hand-drawn red spider lily">
+        <defs>
+          <linearGradient id="petal" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f06b7c"/><stop offset="1" stop-color="#a91f42"/></linearGradient>
+          <linearGradient id="stem" x1="0" x2="1"><stop stop-color="#6b8b67"/><stop offset="1" stop-color="#3d644d"/></linearGradient>
+        </defs>
+        <path d="M151 284 C151 230 147 194 153 148" stroke="url(#stem)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M150 247 Q100 208 77 226 Q108 250 150 255" fill="#8ea783" opacity=".8"/>
+        <path d="M151 267 Q195 220 224 235 Q195 266 151 275" fill="#789773" opacity=".8"/>
+        <g fill="none" stroke="url(#petal)" stroke-width="5" stroke-linecap="round">
+          <path d="M151 150 C117 124 83 129 53 105 C80 145 111 154 151 150"/>
+          <path d="M151 150 C124 111 128 77 114 48 C103 91 119 124 151 150"/>
+          <path d="M151 150 C154 108 180 79 207 63 C195 105 178 131 151 150"/>
+          <path d="M151 150 C187 130 217 138 250 125 C222 158 187 162 151 150"/>
+          <path d="M151 150 C185 161 201 190 207 220 C176 197 160 175 151 150"/>
+          <path d="M151 150 C129 177 96 188 68 181 C95 159 125 151 151 150"/>
+          <path d="M151 150 C139 113 151 84 168 54 C177 94 166 125 151 150"/>
+          <path d="M151 150 C119 142 94 105 91 78 C122 99 141 124 151 150"/>
+        </g>
+        <g stroke="#e9a6ad" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M151 150 Q126 129 91 112"/><path d="M151 150 Q140 111 133 76"/><path d="M151 150 Q175 111 195 83"/>
+          <path d="M151 150 Q200 144 232 134"/><path d="M151 150 Q181 178 195 204"/><path d="M151 150 Q117 167 87 174"/>
+        </g>
+        <g stroke="#d39a3e" stroke-width="2.5" stroke-linecap="round">
+          <path d="M151 150 Q132 112 119 91"/><path d="M151 150 Q170 109 179 94"/><path d="M151 150 Q194 130 215 124"/>
+          <path d="M151 150 Q186 170 201 185"/><path d="M151 150 Q112 143 91 139"/>
+        </g>
+        <g fill="#d7a34a"><circle cx="119" cy="91" r="3"/><circle cx="179" cy="94" r="3"/><circle cx="215" cy="124" r="3"/><circle cx="201" cy="185" r="3"/><circle cx="91" cy="139" r="3"/></g>
+      </svg>
+      <p class="sub">I wanted to give you flowers, even from far away. So here's one you can keep right here, whenever you need a little reminder of me.</p>
+      <div class="notes">
+        <div class="note"><b>♡ A little reminder</b>Even when we're far apart, you're still part of my everyday.</div>
+        <div class="note"><b>♡ My favourite thing</b>How we always find time for each other, no matter how busy life gets.</div>
+        <div class="note"><b>♡ If I could</b>I'd bring you your favourite flowers in person and get to see your face when I hand them to you.</div>
+        <div class="note"><b>♡ Until then</b>Let this little flower stand in for one very big hug from me.</div>
+      </div>
+      <button class="btn" onclick="show('home')">Back to my gifts ♡</button>
+    </div>
+  </div>
+</section>
+
+<section id="story" class="screen">
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">Gift two · Our little beginning</div>
+      <h2>And to think, it started with a voice...</h2>
+      <p class="sub">A tiny story about the boy who asked me to speak in Valorant.</p>
+      <div class="story-box"><p id="storyText">Every good love story starts somewhere. Ours started in a Valorant game... 🎮</p></div>
+      <div>
+        <button class="btn secondary" id="backStory" onclick="stepStory(-1)" style="display:none">← Back</button>
+        <button class="btn" id="nextStory" onclick="stepStory(1)">Keep going ♡</button>
+      </div>
+      <p class="tiny">Somewhere between games, daily calls, and making time for each other, you became my favourite person.</p>
+      <button class="btn secondary" onclick="show('home')">Back to my gifts ♡</button>
+    </div>
+  </div>
+</section>
+
+<section id="letter" class="screen">
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">Gift three · From your bunny</div>
+      <h2>A letter for my baby ♡</h2>
+      <div class="letter">Happy birthday, my sweet boy.
+
+I wish more than anything that I could be there with you today, give you the biggest hug, and celebrate you in person. Since I can't do that right now, I made you this little corner of the internet, filled with pieces of my heart.
+
+It's still so cute to me that we met because you asked me to speak in Valorant. You probably didn't know that one little moment would turn into something so important to me. And now you're the person I get to call every day, play with, laugh with, and make time for, even when we're far apart.
+
+Thank you for showing up for me and for making space for us in your everyday life. I love that we keep choosing each other, day after day. I hope this new year of your life brings you so much happiness, good health, wins in your games, progress toward your goals, and every little thing you've been hoping for.
+
+I hope you always remember how loved you are. Distance can make some things harder, but it doesn't change how much you mean to me. If I could wish for one thing today, it would be to be beside you and see your smile in person.
+
+Happy birthday, baby. I am so lucky that out of all the people in the world, I got to meet you.
+
+I love you, my sweet boy. More than this little website could ever fit.
+
+<div class="signature">Forever your bunny ♡</div></div>
+      <button class="btn" onclick="show('home')">Back to my gifts ♡</button>
+    </div>
+  </div>
+</section>
+
+<script>
+let entered = "";
+const correctCode = "0607";
+function updateCode() {
+  document.getElementById("code").textContent = entered.padEnd(4, "○").split("").join(" ");
+}
+function press(n) {
+  if (entered.length < 4) entered += n;
+  document.getElementById("error").textContent = "";
+  updateCode();
+  if (entered.length === 4) setTimeout(checkCode, 180);
+}
+function clearCode() {
+  entered = entered.slice(0, -1);
+  document.getElementById("error").textContent = "";
+  updateCode();
+}
+function checkCode() {
+  if (entered === correctCode) {
+    show("home");
+    entered = "";
+    updateCode();
+  } else {
+    document.getElementById("error").textContent = "Not quite, birthday boy ♡ Try again!";
+    entered = "";
+    updateCode();
+  }
+}
+function show(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+const story = [
+  "Every good love story starts somewhere. Ours started in a Valorant game... 🎮",
+  "You asked me to speak in game. And when I finally did, little did I know you'd get caught up in my voice. ♡",
+  "Somehow, a game turned into daily calls, playing together, and two people who keep making time for each other.",
+  "And now you're my favourite notification, my favourite person to play with, and the boy I wish I could hug for real.",
+  "So here's to the random game that brought us together, and to all the little moments still waiting for us. Happy birthday, mi amor. ♡"
+];
+let storyIndex = 0;
+function renderStory() {
+  document.getElementById("storyText").textContent = story[storyIndex];
+  document.getElementById("backStory").style.display = storyIndex === 0 ? "none" : "inline-block";
+  document.getElementById("nextStory").textContent = storyIndex === story.length - 1 ? "Read it again ♡" : "Keep going ♡";
+}
+function stepStory(direction) {
+  if (storyIndex === story.length - 1 && direction === 1) storyIndex = 0;
+  else storyIndex = Math.max(0, Math.min(story.length - 1, storyIndex + direction));
+  renderStory();
+}
+renderStory();
+updateCode();
+</script>
+</body>
+</html>
