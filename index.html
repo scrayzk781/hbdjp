@@ -4,82 +4,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>For My Sweet Boy ♡</title>
-  <style>
-  :root {
-    --pink: #f6dce3;
-    --pink2: #fbeef1;
-    --rose: #bd657c;
-    --deep: #783c50;
-    --cream: #fffaf7;
-    --ink: #624751;
-    --muted: #9c7883;
-    --line: #eed2da;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; min-height: 100vh; color: var(--ink);
-    background: radial-gradient(circle at top, #fffafd 0, var(--pink2) 52%, #f4dce4 100%);
-    font-family: Georgia, "Times New Roman", serif;
-  }
-  button, input { font: inherit; }
-  button { cursor: pointer; }
-  .screen { display: none; min-height: 100vh; padding: 28px 18px 48px; }
-  .screen.active { display: flex; align-items: center; justify-content: center; }
-  .wrap { width: min(760px, 100%); margin: auto; text-align: center; }
-  .eyebrow { color: var(--rose); text-transform: uppercase; letter-spacing: .18em; font: 11px Arial, sans-serif; }
-  h1 { font-size: clamp(28px, 5.5vw, 48px); line-height: 1.08; font-weight: normal; margin: 12px 0; }
-  h2 { font-size: clamp(27px, 5vw, 39px); font-weight: normal; margin: 10px 0 14px; }
-  p { line-height: 1.75; }
-  .sub { color: var(--muted); max-width: 490px; margin: 12px auto 24px; }
-  .card {
-    background: rgba(255,250,247,.86); border: 1px solid var(--line);
-    border-radius: 24px; padding: clamp(22px, 5vw, 42px);
-    box-shadow: 0 16px 45px rgba(151, 87, 108, .09);
-  }
-  .heart { color: var(--rose); font-size: 24px; }
-  .btn {
-    border: 1px solid #d8a2b1; color: white; background: var(--rose);
-    border-radius: 999px; padding: 12px 22px; margin: 6px;
-    transition: transform .15s, background .15s;
-  }
-  .btn:hover { transform: translateY(-2px); background: var(--deep); }
-  .btn.secondary { color: var(--deep); background: #fff7f8; }
-  .keypad { display: grid; grid-template-columns: repeat(3, minmax(58px, 76px)); gap: 9px; justify-content: center; margin: 20px auto 12px; }
-  .key {
-    border: 1px solid var(--line); background: white; color: var(--deep);
-    border-radius: 16px; height: 57px; font-size: 20px;
-  }
-  .key:hover { background: var(--pink2); }
-  .code-display { letter-spacing: .4em; font: 22px Arial, sans-serif; min-height: 32px; color: var(--rose); }
-  .error { color: #a03d56; min-height: 22px; font: 13px Arial, sans-serif; }
-  .gifts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
-  .gift {
-    background: #fff9fa; border: 1px solid var(--line); border-radius: 20px;
-    padding: 20px 10px; color: var(--deep); min-height: 165px;
-    box-shadow: 0 8px 24px rgba(151, 87, 108, .06);
-  }
-  .gift:hover { transform: translateY(-4px); }
-  .gift-art { font-size: 46px; display: block; margin-bottom: 10px; }
-  .gift strong { display: block; font-size: 17px; font-weight: normal; }
-  .gift small { display: block; font: 11px Arial, sans-serif; color: var(--muted); margin-top: 7px; }
-  .flower-art { width: min(300px, 80%); margin: 4px auto 18px; display: block; }
-  .notes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; text-align: left; }
-  .note { padding: 16px; border-radius: 16px; background: #fff2f5; border: 1px solid #f1d8df; line-height: 1.55; }
-  .note b { color: var(--rose); font-weight: normal; display: block; margin-bottom: 5px; }
-  .story-box { max-width: 520px; margin: 22px auto; padding: 26px; background: #fff4f6; border: 1px solid var(--line); border-radius: 20px; min-height: 145px; display:flex; align-items:center; justify-content:center; }
-  .story-box p { font-size: 19px; }
-  .letter { text-align: left; max-width: 580px; margin: 20px auto 0; line-height: 1.9; white-space: pre-line; }
-  .signature { color: var(--rose); font-style: italic; font-size: 20px; }
-  .tiny { font: 11px Arial, sans-serif; color: var(--muted); margin-top: 24px; }
-  .top-heart { margin-bottom: 12px; color: var(--rose); letter-spacing: .3em; }
-  @media (max-width: 540px) {
-    .gifts { grid-template-columns: 1fr; max-width: 300px; margin-left: auto; margin-right: auto; }
-    .gift { min-height: 115px; display: flex; align-items: center; text-align: left; gap: 14px; padding: 15px 20px; }
-    .gift-art { font-size: 39px; margin: 0; }
-    .notes { grid-template-columns: 1fr; }
-  }
-
-/* Real-looking pink gift boxes */
+<style>
+:root {
+  --pink: #f6dce3;
+  --pink2: #fbeef1;
+  --rose: #bd657c;
+  --deep: #783c50;
+  --cream: #fffaf7;
+  --ink: #624751;
+  --muted: #9c7883;
+  --line: #eed2da;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fffafd 0, var(--pink2) 52%, #f4dce4 100%);
+  font-family: Georgia, "Times New Roman", serif;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+.screen { display: none; min-height: 100vh; padding: 28px 18px 48px; }
+.screen.active { display: flex; align-items: center; justify-content: center; }
+.wrap { width: min(760px, 100%); margin: auto; text-align: center; }
+.eyebrow {
+  color: var(--rose);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font: 11px Arial, sans-serif;
+}
+h1 { font-size: clamp(28px, 5.5vw, 48px); line-height: 1.08; font-weight: normal; margin: 12px 0; }
+h2 { font-size: clamp(27px, 5vw, 39px); font-weight: normal; margin: 10px 0 14px; }
+p { line-height: 1.75; }
+.sub { color: var(--muted); max-width: 490px; margin: 12px auto 24px; }
+.card {
+  background: rgba(255,250,247,.86);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: clamp(22px, 5vw, 42px);
+  box-shadow: 0 16px 45px rgba(151, 87, 108, .09);
+}
+.heart { color: var(--rose); font-size: 24px; }
+.btn {
+  border: 1px solid #d8a2b1;
+  color: white;
+  background: var(--rose);
+  border-radius: 999px;
+  padding: 12px 22px;
+  margin: 6px;
+  transition: transform .15s, background .15s;
+}
+.btn:hover { transform: translateY(-2px); background: var(--deep); }
+.btn.secondary { color: var(--deep); background: #fff7f8; }
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(58px, 76px));
+  gap: 9px;
+  justify-content: center;
+  margin: 20px auto 12px;
+}
+.key {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--deep);
+  border-radius: 16px;
+  height: 57px;
+  font-size: 20px;
+}
+.key:hover { background: var(--pink2); }
+.code-display {
+  letter-spacing: .4em;
+  font: 22px Arial, sans-serif;
+  min-height: 32px;
+  color: var(--rose);
+}
+.error { color: #a03d56; min-height: 22px; font: 13px Arial, sans-serif; }
+.gifts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
 .gift {
   background: #fff8fa;
   border: 1px solid #edcbd5;
@@ -90,17 +91,13 @@
   box-shadow: 0 12px 25px rgba(151, 87, 108, 0.12);
   transition: transform 0.25s, box-shadow 0.25s;
 }
-
 .gift:hover {
   transform: translateY(-7px) rotate(-1deg);
   box-shadow: 0 18px 30px rgba(151, 87, 108, 0.18);
 }
-
-.gift-art {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
-}
+.gift-art { display: flex; justify-content: center; margin-bottom: 25px; }
+.gift strong { display: block; font-size: 17px; font-weight: normal; }
+.gift small { display: block; font: 11px Arial, sans-serif; color: var(--muted); margin-top: 7px; }
 
 .present {
   position: relative;
@@ -112,7 +109,6 @@
   box-shadow: inset -8px 0 0 rgba(174, 91, 119, 0.12),
               0 10px 14px rgba(130, 72, 90, 0.15);
 }
-
 .present::before {
   content: "";
   position: absolute;
@@ -122,7 +118,6 @@
   height: 100%;
   background: #fff0d9;
 }
-
 .present-lid {
   position: absolute;
   z-index: 2;
@@ -134,7 +129,6 @@
   background: linear-gradient(135deg, #fce4e9, #efb6c7);
   box-shadow: 0 4px 5px rgba(130, 72, 90, 0.12);
 }
-
 .present-lid::before {
   content: "";
   position: absolute;
@@ -143,7 +137,6 @@
   height: 23px;
   background: #fff0d9;
 }
-
 .present-bow {
   position: absolute;
   z-index: 3;
@@ -155,7 +148,6 @@
   border-radius: 70% 40% 70% 40%;
   transform: rotate(25deg);
 }
-
 .present-bow::after {
   content: "";
   position: absolute;
@@ -167,7 +159,6 @@
   border-radius: 40% 70% 40% 70%;
   transform: rotate(45deg);
 }
-
 .present-ribbon {
   position: absolute;
   z-index: 2;
@@ -177,27 +168,212 @@
   height: 68px;
   background: #fff0d9;
 }
-
-@media (max-width: 540px) {
-  .gift {
-    min-height: 140px;
-    padding: 22px 16px;
-  }
-
-  .gift-art {
-    margin: 0;
-    min-width: 105px;
-  }
-}
-
-  .flower-image {
+.flower-image {
   width: 220px;
   max-width: 100%;
   height: auto;
   display: block;
   margin: 20px auto;
 }
-  </style>
+.notes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  text-align: left;
+}
+.note {
+  padding: 16px;
+  border-radius: 16px;
+  background: #fff2f5;
+  border: 1px solid #f1d8df;
+  line-height: 1.55;
+}
+.note b { color: var(--rose); font-weight: normal; display: block; margin-bottom: 5px; }
+.letter {
+  text-align: left;
+  max-width: 580px;
+  margin: 20px auto 0;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+.signature { color: var(--rose); font-style: italic; font-size: 20px; }
+.tiny { font: 11px Arial, sans-serif; color: var(--muted); margin-top: 24px; }
+.top-heart { margin-bottom: 12px; color: var(--rose); letter-spacing: .3em; }
+
+/* The Connected by Light star universe */
+#story .universe-wrap { width: min(900px, 100%); }
+.universe-card {
+  color: #fff7ff;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 0%, #755c91 0%, #42365f 44%, #282642 100%);
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 20px 55px rgba(65, 43, 85, .22);
+}
+.universe-card .eyebrow { color: #e7c9f4; }
+.universe-card h2 { color: #fff8ff; }
+.universe-card .sub { color: #eadff1; }
+.moon-scene {
+  position: relative;
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+  margin: 2px 0 10px;
+}
+.moon-glow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255,221,246,.12);
+  filter: blur(20px);
+}
+.crescent-moon {
+  position: relative;
+  font-size: clamp(76px, 13vw, 112px);
+  line-height: 1;
+  color: #fff0c9;
+  text-shadow: 0 0 18px rgba(255,226,248,.65), 0 0 40px rgba(220,183,255,.5);
+  animation: moonFloat 4s ease-in-out infinite;
+}
+@keyframes moonFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.universe-quote { max-width: 600px; margin: 0 auto 18px; color: #f7e9ff; font-style: italic; }
+.star-count { color: #e8d7f2; font: 12px Arial, sans-serif; letter-spacing: .04em; margin: 12px 0 8px; }
+.star-map {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  height: clamp(390px, 62vw, 510px);
+  margin: 0 auto 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, rgba(190,151,222,.13), transparent 58%), rgba(18,17,43,.22);
+}
+.star-map::before, .star-map::after {
+  content: "✧       ·        ✦       ·      ✧";
+  position: absolute;
+  color: rgba(255,235,255,.38);
+  letter-spacing: .7em;
+  font-size: 12px;
+  pointer-events: none;
+}
+.star-map::before { top: 8%; left: 8%; }
+.star-map::after { bottom: 8%; right: 5%; }
+.constellation-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+  pointer-events: none;
+}
+.star-map.completed .constellation-lines { opacity: .8; }
+.constellation-lines polyline, .constellation-lines path {
+  fill: none;
+  stroke: #f8d9ff;
+  stroke-width: .65;
+  stroke-dasharray: 2 2;
+  filter: drop-shadow(0 0 3px #e7c5ff);
+}
+.star-button {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%,-50%);
+  width: 43px;
+  height: 43px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: #fcecff;
+  font-size: 26px;
+  text-shadow: 0 0 8px #f4c9ff, 0 0 18px #cfa4ff;
+  transition: transform .2s, color .2s, text-shadow .2s;
+  z-index: 2;
+}
+.star-button:hover, .star-button:focus-visible {
+  transform: translate(-50%,-50%) scale(1.3);
+  outline: none;
+  color: #fff6c8;
+  text-shadow: 0 0 12px #fff2b8, 0 0 26px #f5d7ff;
+}
+.star-button.unlocked {
+  color: #fff0b7;
+  text-shadow: 0 0 12px #fff1b9, 0 0 25px #ffc8f1;
+}
+.star-button.music-star::after {
+  content: "♫";
+  position: absolute;
+  right: -1px;
+  bottom: -2px;
+  font: 11px Arial,sans-serif;
+  color: #f9d7ff;
+  background: #72538a;
+  border: 1px solid #ead2f8;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  line-height: 14px;
+}
+.star-message {
+  display: none;
+  max-width: 590px;
+  margin: 18px auto;
+  padding: 22px;
+  color: #493653;
+  background: rgba(255,248,255,.97);
+  border: 1px solid #e6c9ef;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(16,10,35,.18);
+  animation: messageIn .35s ease both;
+}
+.star-message.visible { display: block; }
+@keyframes messageIn {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.star-message h3 { margin: 0 0 8px; color: #80578e; font-size: 21px; font-weight: normal; }
+.star-message p { margin: 0; line-height: 1.7; }
+.star-message .music-note { margin-top: 14px; font: 12px Arial,sans-serif; color: #8a6c92; }
+.star-message audio { display: block; width: 100%; margin: 14px auto 0; }
+.final-constellation {
+  display: none;
+  max-width: 600px;
+  margin: 22px auto;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,230,255,.32);
+  background: rgba(255,255,255,.08);
+  animation: messageIn .8s ease both;
+}
+.final-constellation.visible { display: block; }
+.final-heart { font-size: 46px; letter-spacing: .15em; color: #ffe8ff; text-shadow: 0 0 16px #e9b9ff; }
+.final-constellation h3 { color: #fff0ce; font-weight: normal; font-size: clamp(23px,4vw,32px); margin: 8px 0; }
+.final-constellation p { color: #f7e8ff; line-height: 1.8; }
+.universe-card .btn.secondary { color: #4c3b61; background: #fff7ff; border-color: #e9d2f2; }
+
+@media (max-width: 540px) {
+  .gifts { grid-template-columns: 1fr; max-width: 300px; margin-left: auto; margin-right: auto; }
+  .gift { min-height: 140px; padding: 22px 16px; }
+  .gift-art { margin: 0; min-width: 105px; }
+  .notes { grid-template-columns: 1fr; }
+  #story .universe-card { padding: 20px 13px; }
+  .star-map { height: 400px; border-radius: 18px; }
+  .star-button { width: 35px; height: 35px; font-size: 22px; }
+  .star-message { padding: 18px 15px; }
+  .moon-scene { min-height: 135px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crescent-moon, .star-message { animation: none; }
+  .star-button, .constellation-lines { transition: none; }
+}
+</style>
 </head>
 <body>
 <section id="lock" class="screen active">
@@ -252,8 +428,8 @@
       </span>
     </span>
     <span>
-      <strong>Stargaze some musica 🎵</strong>
-      <small>Soundtracks of our love</small>
+      <strong>Our constellation ✨</strong>
+      <small>Stargazing a sky full of us</small>
     </span>
   </button>
 
@@ -301,17 +477,64 @@
 </section>
 
 <section id="story" class="screen">
-  <div class="wrap">
-    <div class="card">
-      <div class="eyebrow">Gift two · Our little beginning</div>
-      <h2>And to think, it started with a voice...</h2>
-      <p class="sub">A tiny story about the boy who asked me to speak in Valorant.</p>
-      <div class="story-box"><p id="storyText">Every good love story starts somewhere. Ours started in a Valorant game... 🎮</p></div>
-      <div>
-        <button class="btn secondary" id="backStory" onclick="stepStory(-1)" style="display:none">← Back</button>
-        <button class="btn" id="nextStory" onclick="stepStory(1)">Keep going ♡</button>
+<div class="wrap universe-wrap">
+    <div class="card universe-card">
+      <div class="eyebrow">Gift two · Connected by light</div>
+      <h2>22 Reasons Why My Heart Chose You ✨</h2>
+      <p class="sub">Twenty-two little stars, each holding a piece of my heart. Tap them to discover your reasons, my love.</p>
+
+      <div class="moon-scene" aria-hidden="true">
+        <div class="moon-glow"></div>
+        <div class="crescent-moon">☾</div>
       </div>
-      <p class="tiny">Somewhere between games, daily calls, and making time for each other, you became my favourite person.</p>
+
+      <p class="universe-quote">“No matter how far apart we are, we're still beneath the same moon, connected by light. ♡”</p>
+      <p class="star-count" id="starCount" aria-live="polite">0 / 22 stars discovered · take your time, birthday boy ♡</p>
+
+      <div class="star-map" id="starMap" aria-label="A night sky with 22 clickable stars">
+        <svg class="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="12,19 25,32 42,18 54,34 70,22 86,36 75,52 57,48 44,64 28,55 15,72 35,83 55,75 73,85 88,68" />
+          <polyline points="25,32 28,55 44,64 57,48 75,52 73,85" />
+          <path d="M35 42 C30 35 22 40 25 47 L39 59 L53 47 C57 39 47 35 39 42 Z" />
+        </svg>
+
+        <button class="star-button" style="--x:12%;--y:19%" onclick="openStar(0)" aria-label="Open star 1">✦</button>
+        <button class="star-button" style="--x:25%;--y:32%" onclick="openStar(1)" aria-label="Open star 2">✧</button>
+        <button class="star-button" style="--x:42%;--y:18%" onclick="openStar(2)" aria-label="Open star 3">✦</button>
+        <button class="star-button" style="--x:54%;--y:34%" onclick="openStar(3)" aria-label="Open star 4">✧</button>
+        <button class="star-button music-star" style="--x:70%;--y:22%" onclick="openStar(4)" aria-label="Open star 5, music surprise">✦</button>
+        <button class="star-button" style="--x:86%;--y:36%" onclick="openStar(5)" aria-label="Open star 6">✧</button>
+        <button class="star-button" style="--x:75%;--y:52%" onclick="openStar(6)" aria-label="Open star 7">✦</button>
+        <button class="star-button" style="--x:57%;--y:48%" onclick="openStar(7)" aria-label="Open star 8">✧</button>
+        <button class="star-button" style="--x:44%;--y:64%" onclick="openStar(8)" aria-label="Open star 9">✦</button>
+        <button class="star-button" style="--x:28%;--y:55%" onclick="openStar(9)" aria-label="Open star 10">✧</button>
+        <button class="star-button" style="--x:15%;--y:72%" onclick="openStar(10)" aria-label="Open star 11">✦</button>
+        <button class="star-button" style="--x:35%;--y:83%" onclick="openStar(11)" aria-label="Open star 12">✧</button>
+        <button class="star-button" style="--x:55%;--y:75%" onclick="openStar(12)" aria-label="Open star 13">✦</button>
+        <button class="star-button music-star" style="--x:73%;--y:85%" onclick="openStar(13)" aria-label="Open star 14, music surprise">✧</button>
+        <button class="star-button" style="--x:88%;--y:68%" onclick="openStar(14)" aria-label="Open star 15">✦</button>
+        <button class="star-button" style="--x:8%;--y:43%" onclick="openStar(15)" aria-label="Open star 16">✧</button>
+        <button class="star-button" style="--x:34%;--y:12%" onclick="openStar(16)" aria-label="Open star 17">✦</button>
+        <button class="star-button" style="--x:62%;--y:12%" onclick="openStar(17)" aria-label="Open star 18">✧</button>
+        <button class="star-button" style="--x:92%;--y:50%" onclick="openStar(18)" aria-label="Open star 19">✦</button>
+        <button class="star-button" style="--x:8%;--y:88%" onclick="openStar(19)" aria-label="Open star 20">✧</button>
+        <button class="star-button" style="--x:63%;--y:61%" onclick="openStar(20)" aria-label="Open star 21">✦</button>
+        <button class="star-button" style="--x:47%;--y:91%" onclick="openStar(21)" aria-label="Open star 22">✧</button>
+      </div>
+
+      <div class="star-message" id="starMessage" aria-live="polite" aria-atomic="true">
+        <h3 id="starTitle"></h3>
+        <p id="starText"></p>
+        <div id="starAudioArea"></div>
+      </div>
+
+      <div class="final-constellation" id="finalConstellation">
+        <div class="final-heart" aria-hidden="true">✧ ♡ ✧</div>
+        <h3>Our own little universe 🌙</h3>
+        <p>You've found all 22 reasons, my love. But the truth is, I could fill an entire sky and still find more. No distance could make you any less precious to me. We're connected by light, and my heart will keep choosing you. Happy 22nd birthday, my favourite boy. ♡</p>
+        <p><strong>Always you. In every lifetime, under every moon. ♡</strong></p>
+      </div>
+
       <button class="btn secondary" onclick="show('home')">Back to my gifts ♡</button>
     </div>
   </div>
@@ -372,30 +595,168 @@ function checkCode() {
     updateCode();
   }
 }
+  
 function show(id) {
+  // Pause any song when leaving the star gift, but keep discovered stars.
+  if (id !== "story") {
+    document.querySelectorAll("#starAudioArea audio").forEach(audio => audio.pause());
+  }
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
-  window.scrollTo({top: 0, behavior: "smooth"});
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
-const story = [
-  "Every good love story starts somewhere. Ours started in a Valorant game... 🎮",
-  "You asked me to speak in game. And when I finally did, little did I know you'd get caught up in my voice. ♡",
-  "Somehow, a game turned into daily calls, playing together, and two people who keep making time for each other.",
-  "And now you're my favourite notification, my favourite person to play with, and the boy I wish I could hug for real.",
-  "So here's to the random game that brought us together, and to all the little moments still waiting for us. Happy birthday, mi amor. ♡"
+
+// Edit these 22 reasons to make them sound like you and your relationship.
+// Stars 5 and 14 are music surprises. Put the songs in the same folder as
+// this HTML and name them song-one.mp3 and song-two.mp3, or edit the filenames.
+const reasons = [
+  {
+    title: "Reason 01 · Your heart ♡",
+    text: "Because you have a heart that deserves to be loved gently, patiently, and endlessly."
+  },
+  {
+    title: "Reason 02 · Your little ways ✨",
+    text: "Because the little things you do without thinking are some of the things I adore most."
+  },
+  {
+    title: "Reason 03 · Your voice 🎧",
+    text: "Because hearing your voice can make an ordinary day feel a little more like home."
+  },
+  {
+    title: "Reason 04 · You make me smile ♡",
+    text: "Because you can make me smile at my screen like the most lovesick girl alive."
+  },
+  {
+    title: "Reason 05 · Our soundtrack 🎵",
+    text: "Because some songs feel different now: they carry little pieces of you, me, and us.",
+    audioFile: "song-one.mp3",
+    audioLabel: "Play our song"
+  },
+  {
+    title: "Reason 06 · My favourite person 🎮",
+    text: "Because the boy I met through a game became the person I want to tell everything to."
+  },
+  {
+    title: "Reason 07 · Your laugh ♡",
+    text: "Because your happiness is contagious, and I wish I could be there to hear your laugh in person."
+  },
+  {
+    title: "Reason 08 · The way you try ✨",
+    text: "Because I see the effort you make for us, even when distance makes things harder."
+  },
+  {
+    title: "Reason 09 · Our conversations 🌙",
+    text: "Because I could talk to you about everything and absolutely nothing, and still want five more minutes."
+  },
+  {
+    title: "Reason 10 · Feeling close ♡",
+    text: "Because somehow, even through a screen, you can make the world feel less far away."
+  },
+  {
+    title: "Reason 11 · My safe place 🫶",
+    text: "Because with you, I want to be soft, silly, honest, and completely myself."
+  },
+  {
+    title: "Reason 12 · Choosing us ✨",
+    text: "Because what we have is worth the patience, the planning, and every kilometre between us."
+  },
+  {
+    title: "Reason 13 · The same moon 🌙",
+    text: "Because I love imagining us looking up at the same moon, even when we're not looking at it from the same place."
+  },
+  {
+    title: "Reason 14 · A song for missing me 🎵",
+    text: "For the moments when I wish I could be beside you. Until I can, let this song keep you a little company from me.",
+    audioFile: "song-two.mp3",
+    audioLabel: "Play this little piece of me"
+  },
+  {
+    title: "Reason 15 · Connected by light ✨",
+    text: "Because the moon reminds me that distance doesn't erase connection. We're still sharing the same light."
+  },
+  {
+    title: "Reason 16 · Our future ♡",
+    text: "Because I look forward to the ordinary things with you: sitting together, holding your hand, and not having to say goodbye through a screen."
+  },
+  {
+    title: "Reason 17 · Your dreams 🌟",
+    text: "Because I want to cheer for you, celebrate your wins, and remind you how capable you are on the difficult days."
+  },
+  {
+    title: "Reason 18 · Growing together 🌱",
+    text: "Because I want us to keep learning each other, laughing together, and becoming better side by side."
+  },
+  {
+    title: "Reason 19 · The hugs I owe you 🤍",
+    text: "Because I have approximately a million hugs saved up for you, and every single one is overdue."
+  },
+  {
+    title: "Reason 20 · Every version of you ♡",
+    text: "Because I want to love you through the confident days, the tired days, the silly days, and all the in-between ones."
+  },
+  {
+    title: "Reason 21 · My favourite choice 💗",
+    text: "Because loving you isn't just one big moment. It's a little choice my heart keeps making, again and again."
+  },
+  {
+    title: "Reason 22 · Simply you 🌙",
+    text: "Because at the end of every reason, every song, and every little star, it comes back to you. My heart chose you, baby. And it still does."
+  }
 ];
-let storyIndex = 0;
-function renderStory() {
-  document.getElementById("storyText").textContent = story[storyIndex];
-  document.getElementById("backStory").style.display = storyIndex === 0 ? "none" : "inline-block";
-  document.getElementById("nextStory").textContent = storyIndex === story.length - 1 ? "Read it again ♡" : "Keep going ♡";
+
+const openedStars = new Set();
+
+function openStar(index) {
+  const reason = reasons[index];
+  if (!reason) return;
+
+  openedStars.add(index);
+
+  const starButtons = document.querySelectorAll(".star-button");
+  starButtons[index].classList.add("unlocked");
+  starButtons[index].setAttribute("aria-pressed", "true");
+
+  document.getElementById("starTitle").textContent = reason.title;
+  document.getElementById("starText").textContent = reason.text;
+
+  const audioArea = document.getElementById("starAudioArea");
+  audioArea.replaceChildren();
+
+  if (reason.audioFile) {
+    const note = document.createElement("p");
+    note.className = "music-note";
+    note.textContent = "A little song for you ♡";
+
+    const audio = document.createElement("audio");
+    audio.controls = true;
+    audio.preload = "none";
+    audio.src = reason.audioFile;
+    audio.setAttribute("aria-label", reason.audioLabel || "Play song");
+
+    audio.addEventListener("error", () => {
+      note.textContent = "Add " + reason.audioFile + " to your GitHub repository to play this song ♡";
+    }, { once: true });
+
+    audioArea.append(note, audio);
+  }
+
+  const message = document.getElementById("starMessage");
+  message.classList.remove("visible");
+  void message.offsetWidth;
+  message.classList.add("visible");
+
+  document.getElementById("starCount").textContent =
+    openedStars.size + " / 22 stars discovered · " +
+    (openedStars.size === 22
+      ? "you found them all, my love ♡"
+      : "keep finding little pieces of my heart ♡");
+
+  if (openedStars.size === 22) {
+    document.getElementById("starMap").classList.add("completed");
+    document.getElementById("finalConstellation").classList.add("visible");
+  }
 }
-function stepStory(direction) {
-  if (storyIndex === story.length - 1 && direction === 1) storyIndex = 0;
-  else storyIndex = Math.max(0, Math.min(story.length - 1, storyIndex + direction));
-  renderStory();
-}
-renderStory();
+
 updateCode();
 </script>
 </body>
