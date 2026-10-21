@@ -388,7 +388,7 @@ p { line-height: 1.75; }
         <button class="key" onclick="press('1')">1</button><button class="key" onclick="press('2')">2</button><button class="key" onclick="press('3')">3</button>
         <button class="key" onclick="press('4')">4</button><button class="key" onclick="press('5')">5</button><button class="key" onclick="press('6')">6</button>
         <button class="key" onclick="press('7')">7</button><button class="key" onclick="press('8')">8</button><button class="key" onclick="press('9')">9</button>
-        <button class="key" onclick="clearCode()">⌫</button><button class="key" onclick="press('0')">0</button><button class="key" onclick="checkCode()">♡</button>
+        <button class="key" onclick="clearCode()">⌫</button><button class="key" onclick="press('0')">0</button><button class="key" onclick="checkCode()" aria-label="Enter password">↵</button>
       </div>
       <div id="error" class="error"></div>
       <p class="tiny">A little surprise made with love ♡</p>
@@ -577,7 +577,6 @@ function press(n) {
   if (entered.length < 4) entered += n;
   document.getElementById("error").textContent = "";
   updateCode();
-  if (entered.length === 4) setTimeout(checkCode, 180);
 }
 function clearCode() {
   entered = entered.slice(0, -1);
