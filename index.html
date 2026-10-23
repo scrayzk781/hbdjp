@@ -626,6 +626,7 @@ const reasons = [
     text: "Suddenly all songs are love songs, because I find little pieces of you in every beautiful melody I hear.",
     audioFile: "song-one.mp3",
     audioLabel: "Play our song"
+    audioCaption: "About you by The 1975 ♡"
   },
   {
     title: "Reason 06 · My favourite person 🎮",
@@ -664,6 +665,8 @@ const reasons = [
     text: "A sweet song to keep you a little company from me. I usually play this at night, imagining what it feels like to fall asleep on your chest.",
     audioFile: "song-two.mp3",
     audioLabel: "Play this little piece of me"
+    audioCaption: "Sweet by Cigarettes After Sex ♡"
+
   },
   {
     title: "Starlight 15 · The same moon 🌙",
@@ -720,7 +723,7 @@ function openStar(index) {
   if (reason.audioFile) {
     const note = document.createElement("p");
     note.className = "music-note";
-    note.textContent = "About you by The 1975 ♡";
+    note.textContent = reason.audioCaption || "A little song for you ♡";
 
     const audio = document.createElement("audio");
     audio.controls = true;
